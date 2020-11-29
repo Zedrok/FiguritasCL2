@@ -1,0 +1,105 @@
+<div class=container-fluid>
+    <div class="col">
+        <ol class="breadcrumb">
+            <li><a href=#>Inicio</a></li>
+            <li><a>/Cuenta</a></li>
+        </ol>
+    </div>
+</div>
+
+<main >
+    <div >
+        <div class="forms">
+            <div class="row">
+                <div class="col border-right border-gray" id="colRegistro">
+                    <header>
+                        <h1>Registrarse</h1>
+                        <p class="subhead">Rellene los campos para poder registrarse</p>
+                    </header>
+                    <div class="form-section login-form-section">
+                        <!-------------FORM REGISTRO SESION------------------------------------------->
+                        <form name="signup_form" method="post"  class="std-form login-form form-area" id="signup_form" class="was-validated">
+                            <!-----------------------------CAMPOS------------------------>
+                            <div class="fields">
+                                <label for="validationServer01">Nombre</label>
+                                <input type="text" class="form-control is-valid" id="validationServer01" title ="Debe tener minimo 3 letras mayusculas o minusculas" pattern="^[a-zA-Z]{3,}$" required>
+                                <div class="invalid-feedback" >
+                                    Campo Obligatorio
+                                </div>
+                                <label for="validationServer02">Apellido Paterno</label>
+                                <input type="text" class="form-control is-valid" id="validationServer02" title="Debe tener minimo 3 letras minusculas o mayusculas" pattern="^[a-zA-Z]{3,}$" required>
+                                <div class="invalid-feedback">
+                                    Campo Obligatorio
+                                </div>
+                                <label for="validationServer03">Apellido Materno</label>
+                                <input type="text" class="form-control is-valid" id="validationServer03" title="Debe tener minimo 3 letras minusculas o mayusculas" pattern="^[A-Za-z]{3,}$" required>
+                                
+                                <div class="invalid-feedback">
+                                    Campo Obligatorio
+                                </div>
+                                <label for="validationServer04">Correo</label>
+                                <input type="text" class="form-control is-valid" id="validationServer04"  title="formato correo@gmail.com"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required >
+                                <div class="invalid-feedback">
+                                    Campo obligatorio
+                                </div>
+                        
+                                
+
+                                <label for="validationServer05">Fecha de Nacimiento</label>
+                                <input type="date" id="validationServer06" title="Seleccione una fecha valida" required>
+                                <div class="class invalid-feedback">
+                                    Campo obligatorio
+                                </div>
+                                <label for="validationServer06">Contraseña</label>
+                                <input type="password" class="form-control is-valid" id="validationServer06"  title="6 caracteres minimo"pattern=\S{6,} required >
+                                <div class="invalid-feedback">
+                                    Campo obligatorio
+                                </div>
+                                    
+                                    
+                            
+    
+                            
+                            </div>
+                            <!-----------------------------CAMPOS------------------------>
+                            <button (click)="alertaMantenimiento()" type="submit" class="btn btn-outline-primary">Registrarse </button>
+                        
+                            
+                            <input type="hidden" id="login_form_redirect_url" name="login_form[redirect_url]" value="/"><input type="hidden" id="login_form__token" name="login_form[_token]" value="TmxGpIEr8sYuUkdppH77rcemRIPdWHFcDD78nuM0WHk">
+                          
+                        </form>
+                         <!-------------FORM REGISTRO SESION------------------------------------------->
+                    </div>
+                   
+                </div>
+                <div class="col"id="colLogin">
+                    <!-------------FORM INICIO SESION------------------------------------------->
+                    <div class="form-section login-form-section" >
+                        <header>
+                            <h1>Iniciar Sesión</h1>
+                        </header>
+                        <form name="login_form"    id="login_form" class="was-validated" >
+                            <!---------------------------CAMPOS----------------->
+                            <div class="fields">
+                                <label for="validationServe07">Correo</label>
+                                <input type="text" class="form-control is-valid" id="validationServe07"   required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
+                               <div class="invalid-feedback">
+                                   Introduzca correo valido
+                               </div>
+                                <label for="validationServe08">Contraseña</label>
+                                <input  type="password" class="form-control is-valid" id="validationServe08" required pattern="\S{6,}">
+                                <div class="invalid-feedback">
+                                    contraseña incorrecta
+                                </div>
+                            </div>
+                            <!---------------------------CAMPOS----------------->
+                            <button  (click)="alertaMantenimiento()" type="submit" class="btn btn-outline-primary">Iniciar sesion </button>
+                         
+                         <!-------------FORM REGISTRO SESION------------------------------------------->
+                        </form>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,38 @@
+<div class=container-fluid>
+    <div class="col">
+        <ol class="breadcrumb">
+            <li><a href=#>Inicio</a></li>
+            <li><a>/Anime</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="container-fluid mt-0">
+    <div class="col-12 mt-0">
+        <div class="row">
+            <div class="col-3" >
+               <div class="card">
+                   <div class="col-12">
+                    <form>
+                        <div class="form-group">
+                          <label for="formControlRange">Precio</label>
+                          <input type="range" class="form-control-range" id="formControlRange" >
+                        </div>
+                      </form>
+                   </div>
+               </div>
+            </div>
+            <div class="col-9" >
+                <div class="card  ">
+                    <h1 class="text">Anime Series</h1>
+                </div>
+                <!-- vista de las figuras en tienda/card -->
+                <div class="row row-cols-1 row-cols-md-4">
+                    <div class="col 3"  *ngFor="let product of productos"> 
+                        <app-producto-card [producto] = "product"></app-producto-card>
+                    </div>
+                </div><!--vista de los productos-->   
+            </div><!--col 9-->
+        </div>
+    </div> <!--col 12-->  
+</div> <!--fluid-->

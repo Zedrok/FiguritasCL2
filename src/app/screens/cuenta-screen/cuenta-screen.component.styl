@@ -1,0 +1,73 @@
+*
+  box-sizing: border-box
+
+@media (min-width:1000px)
+  main
+    background: rgba(240, 240, 240, 0.671)
+    padding: 5em
+
+  .col
+    float: left
+    width: 100%
+
+  #login_form
+    margin-left: 5px
+
+  #signup_form
+    margin-left: 100px
+
+  header
+    margin-left: 100px
+    margin-bottom: 2em
+
+  #date
+    margin-left: 10px
+
+@media (max-width:999px)
+  main
+    background: rgba(240, 240, 240, 0.671)
+    padding: 50px
+
+  .column
+    width: 100%
+
+  div
+    display: table-row
+
+  header
+    padding-top: 50px
+    padding-bottom: 2em
+
+  .validated-input:invalid
+    margin-bottom: 0
+    border-bottom-color: rgb(187,0,0)
+
+  .validated-input:valid
+    margin-bottom: 0
+    border-bottom-color: rgb(73, 211, 19)
+
+  .std-form input,
+  .std-form select,
+  .std-form textarea
+    box-sizing: border-box
+    height: 2em
+    padding: .8em 1em
+    width: 100%
+    border: .1em solid rgb(165 162 162)
+    font-size: 1em
+    line-height: 1.8
+    background: rgb(100%,100%,100%)
+    transition: padding .1s ease-out,border-color .1s ease-out
+
+  .input-error-message
+    display: block
+    margin-top: .5em
+    overflow: hidden
+    font-size: .75em
+    color: rgb(187 0 0)
+    -webkit-animation: .1s slide-down cubic-bezier(.5,0,1,1)
+    animation: .1s slide-down cubic-bezier(.5,0,1,1)
+
+  .std-form .input-error-message
+    flex: 1 0 100%
+

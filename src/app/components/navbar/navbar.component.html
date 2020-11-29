@@ -1,0 +1,42 @@
+
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" [routerLink]="['/inicio']"><img src="../assets/logo-no-borde.png" class="logo"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <form class="form-inline">
+          <input class="form-control" type="search" placeholder="Busqueda" aria-label="Search">
+          <button (click)="alertaMantenimiento()" (enter)="alertaMantenimiento()"class="btn btn-outline-dark" type="submit" >Buscar</button>
+        </form>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categorias
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/anime']">Anime</a>
+              <a class="dropdown-item" [routerLink]="['/comics']">Comics</a>
+              <a class="dropdown-item" [routerLink]="['/dc']">DC</a>
+              <a class="dropdown-item" [routerLink]="['/marvel']">Marvel</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-alt"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" [routerLink]="['/Login']">Iniciar Sesion</a>
+              <a class="dropdown-item" [routerLink]="['/Register']">Registrarse</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/carrito']"><i class="fas fa-shopping-cart"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>

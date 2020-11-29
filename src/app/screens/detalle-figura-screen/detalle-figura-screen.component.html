@@ -1,0 +1,238 @@
+<div class=container-fluid>
+    <div class="col">
+        <ol class="breadcrumb">
+            <li><a href=#>Inicio</a></li>
+            <li><a>/Producto</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="container ">
+        <div class="row mt-10 mb-10" id="Resumen">
+            <div class="col-6 " id="imagen">
+                <img src="{{product.imgUrl}}" class="card-img-top mb-1 ml-1 mr-1 my-2  pl-3 pr-3 ">
+            </div>
+            <div class="col-6">
+                <div class="row" id="detalle">
+                    <ul>
+                        <li class="h3">{{product.nombre}}</li>
+                        <li class="h4 muted">Marca: {{product.marca}}</li>
+                        <li class="h4">Detalles : {{product.descripcion}}</li>
+                        <li class="h5 muted">Stock: {{product.stock}}</li>
+                        <li class="h3">Precio : ${{product.precio}}<span class="h4">+iva</span></li>
+                    </ul>
+                </div>
+                <div class="row" id="comprar">
+                    <button type="submit" class="btn btn-outline-dark" data-toggle="modal" data-target="#Modal"
+                        (click)="datosAgregarAlCarrito()">
+                        <i class="fas fa-shopping-cart"></i>Añadir al carro
+                    </button>
+
+                    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="Modal"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="Modal">Productos Agregados con éxito!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-footer flex" style="flex-wrap: nowrap">
+                                    <button type="button" class="btn btn-secondary px-3 ml-3 mr-auto"
+                                        data-dismiss="modal">Seguir Comprando.</button>
+                                    <button type="button" class="btn btn-primary px-3 ml-auto mr-3"
+                                        [routerLink]="['/carrito']" data-dismiss="modal">Ir al Carrito de
+                                        Compras.</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="row">
+            <div class="col-12" id="Feedback">
+                <!--Componente de reseña , detalles tecnicos del producto-->
+                <div class="row">
+                    <div class="col-9">
+                        <h3>Valoracion del producto</h3>
+                        <div class="container">
+                            <h3>
+                                <div [ngSwitch]="  ">
+                                    <!--media estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--una estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--1 y media estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--2 estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--2 y media estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--3 estrellas estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--3 y media estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--4 estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <!--4 y media estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <!--5 estrella-->
+                                    <div *ngSwitchCase="true">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <!--sin estrella-->
+                                    <div *ngSwitchDefault>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <!--ngswitch-->
+                            </h3>
+                            <!--se obtiene el promedio de puntos-->
+                        </div>
+                        <!--puntuacion estrellas-->
+                        <div class="row">
+                            <li id = "idpo"> {{idpo}}</li>
+                            <div class="container" *ngFor="let comment of comentario">
+                                <app-comentario-producto  *ngIf ="comment._idProduct === idpo" [comment]="comment"></app-comentario-producto>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="contenido" id="send-comment">
+                                nueva reseña
+                                <!-- eleccion de valoracion del 1 al 5  -->
+                                <div class="form-check form-check-inline" id="puntuacion">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio1" value="option1">
+                                    <label class="form-check-label" for="inlineRadio1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" value="option2">
+                                    <label class="form-check-label" for="inlineRadio2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">3 </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">4 </label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio3" value="option3">
+                                    <label class="form-check-label" for="inlineRadio3">5 </label>
+                                </div>
+                                <div class="row">
+                                    <p class="comment">
+                                        <textarea name="Reseña" id="comment" cols="100" rows="5"
+                                            required="required"></textarea>
+                                    </p>
+                                    <input class="btn1 btn-success" type="button" value="Comentar">
+                                </div>
+                            </div>
+                        </div>
+                        <!--agregar comentario-->
+                    </div>
+
+                    <div class="col-3" id="Sugerencia" style="overflow-y: scroll;">
+
+                        <h3>Sugerencias</h3>
+                        <div class="row" id="Sugerencia">
+                            <div  class="col-12" *ngFor="let product of productos">
+                                <app-producto-card *ngIf ="product._id != idpo" [producto]="product" onclick="location.reload()"></app-producto-card>
+
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <!--productos recomendados-->
+
+            </div>
+            <div class="dropdown-divider"></div>
+
+            <!--
+            estrella con relleno        <i class="fas fa-star"></i>
+            estrella mitad              <i class="fas fa-star-half-alt"></i>
+            estrella sin relleno        <i class="far fa-star"></i> 
+                -->
+
+
+        </div><!-- feedback -->
+
+    </div>
+
+</div><!-- container -->

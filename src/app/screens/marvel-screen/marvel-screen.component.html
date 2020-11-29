@@ -1,0 +1,40 @@
+<div class=container-fluid>
+    <div class="col">
+        <ol class="breadcrumb">
+            <li><a href=#>Inicio</a></li>
+            <li><a>/Marvel</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="col-8 offset-2">
+    <img src="https://net-xperience.com/wp-content/uploads/2015/02/en-construccion.png" alt="">
+</div> 
+
+<!---->
+
+<div class="container-fluid mt-0">
+    <div class="col-12 mt-0">
+        <div class="row">
+            <div class="col-3" >
+               <div class="card">
+                   <div class="col-12">
+                       
+                   </div>
+               </div>
+            </div>
+            <div class="col-9" >
+                <div class="card  ">
+                    <h1 class="text">Marvel</h1>
+                </div>
+                <!-- vista de las figuras en tienda/card -->
+                <div class="row row-cols-1 row-cols-md-4">
+                    <div class="col 3"  *ngFor="let product of productos"> 
+                        <app-producto-card [producto] = "product"></app-producto-card>
+                    </div>
+                </div><!--vista de los productos-->
+            </div><!--col 9-->
+        </div>
+    </div> <!--col 12-->
+</div> <!--fluid-->
+

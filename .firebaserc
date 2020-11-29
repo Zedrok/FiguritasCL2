@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "figuritas-44f80": {
+      "hosting": {
+        "Figuritas-CL": [
+          "figuritas-44f80"
+        ]
+      }
+    }
+  }
+}
