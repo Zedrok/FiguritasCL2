@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductoCarrito } from '../../models/productoCarrito.model';
-import { MessengerService } from '../../services/messenger/messenger.service';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, ɵNOT_FOUND_CHECK_ONLY_ELEMENT_INJECTOR } from '@angular/core';
+import { CarritoService } from '../../services/carrito/carrito.service';
 
 @Component({
   selector: 'app-carro-compras-screen',
@@ -11,38 +9,43 @@ import { FormsModule } from '@angular/forms';
 
 export class CarroComprasScreenComponent implements OnInit {
 
-  public productosEnCarrito = [];
+  form;
+  items = [];
+  mensaje;
   public totalCarrito: number;
 
-  constructor(private msg: MessengerService){
+  constructor(private carrito: CarritoService){
     this.totalCarrito = 0;
-    this.productosEnCarrito = [
-      { _id: 'A1', nombre: 'Cooler', cantidad: 1, precio: 49990 },
-      { _id: 'A3', nombre: 'Naruto Uzumaki', cantidad: 2, precio: 45990 }];
+    /*this.form = this.formulario.group({
+      controlNombre: '',
+      controlCorreo: ''
+    });*/
   }
 
   ngOnInit(): void {
-    this.msg.getMsg().subscribe( (producto: ProductoCarrito) => {
-      this.agregarProductoAlCarrito(producto);
-    });
-    this.calcularTotal();
+    this.items = this.carrito.ListarCarrito();
   }
 
-  agregarProductoAlCarrito(productoAgregado: ProductoCarrito): void{
-    console.log(productoAgregado);
-    this.productosEnCarrito.push({
-      _id: productoAgregado._id,
-      nombre: productoAgregado.nombre,
-      precio: productoAgregado.precio,
-      cantidad: 1,
+  EliminarDelCarrito(id): void{
+    // tslint:disable-next-line: prefer-const
+    let index = this.items.findIndex(elemento => elemento._id === id);
+    this.items.splice(index, 1);
+    this.items = this.carrito.ListarCarrito();
+  }
+  /*onSubmit(dato): void{
+    console.log(dato);
+    this.mensaje = this.carrito.GuardarDatos(dato);
+    this.mensaje.subscribe(datos => {
+
     });
   }
+  */
 
-  calcularTotal(): void{
+  /*calcularTotal(): void{
     this.productosEnCarrito.forEach( (producto: ProductoCarrito) => {
     console.log(producto);
     this.totalCarrito += (producto.cantidad * producto.precio);
     });
-  }
+  }*/
 }
 

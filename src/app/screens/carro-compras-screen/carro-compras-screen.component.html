@@ -1,5 +1,5 @@
 <div class=container-fluid>
-    <div class="col">
+    <div class="col mt-2">
         <ol class="breadcrumb">
             <li><a href=#>Inicio</a></li>
             <li><a>/Carrito</a></li>
@@ -8,14 +8,33 @@
 </div>
 
 <hr>
-<div class="progress" >
-    <div class="progress-bar" id="progressCarrito" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Revisión de Carrito</div>
-</div>
 
-<div class="alert alert-info" *ngIf="productosEnCarrito.length ===0">No se han agregado productos al carrito</div>
 
-<div class="container-flex" *ngIf="productosEnCarrito.length > 0 ">
-    <div class="row ml-2">
+<div class="alert alert-info mx-4" *ngIf="items.length ===0">No se han agregado productos al carrito</div>
+
+<div class="container-flex" *ngIf="items.length > 0 ">
+
+    <!-- ><form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div>
+            <label for="nombre">
+                Nombre
+            </label>
+            <input id="nombre" type="text" formControlName="controlNombre">
+        </div>
+        <div>
+            <label for="correo">
+                Correo
+            </label>
+            <input id="correo" type="text" formControlName="controlCorreo">
+        </div>
+        <button class="button" type="submit">Comprar</button>
+        
+    </form> -->
+
+    <div class="progress mx-4" >
+        <div class="progress-bar" id="progressCarrito" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Revisión de Carrito</div>
+    </div>
+    <div class="row  mt-2 ml-2">
         <div class="col-8">
             <table class="table table-hover">
                 <thead>
@@ -25,8 +44,11 @@
                     <th scope="col" style="width:8em">Precio</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let productoEnCarrito of productosEnCarrito"
-                        app-productos-carrito [productoEnCarrito]="productoEnCarrito">
+                    <tr *ngFor="let item of items">
+                        <td><button type="button" class="btn btn-danger pt-1 btn-block px-0 mr-2" (click)="EliminarDelCarrito(item._id)"  style="width: 100px"><i class="fas fa-trash-alt"></i> Eliminar</button></td>
+                        <td>{{ item.nombre }}</td>
+                        <td>{{ item.cantidad }}</td>
+                        <td>${{ item.precio*item.cantidad | currency:'CLP' }}</td> 
                     </tr>
                 </tbody>
             </table>
