@@ -12,6 +12,9 @@ export class AnimeScreenComponent implements OnInit {
 
   public productos: Product[];
   public productos1: Product[];
+  public tamashi : string;
+  public bandai : string;
+  public banpresto : string;
 
   constructor(private productService: ProductService,) {
 
@@ -19,7 +22,9 @@ export class AnimeScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.productos = this.productService.getAllProducts();
-  
+    this.tamashi = 'Tamashii nations';
+    this.bandai = 'Bandai';
+    this.banpresto = 'Banpresto';
   }
 
 }
