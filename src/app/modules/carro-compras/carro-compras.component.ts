@@ -65,11 +65,7 @@ export class CarroComprasComponent implements OnInit {
       }
       return result;
     }
-    return generaNss();
-  }
-
-  getOrden(): string {
-    this.carrito.orden = this.generarOrden();
+    this.carrito.orden = generaNss();
     return this.carrito.orden;
   }
 }
