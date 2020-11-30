@@ -2,7 +2,7 @@
     <div class="col">
         <ol class="breadcrumb">
             <li><a href=#>Inicio</a></li>
-            <li><a>/Anime</a></li>
+            <li><a>/Figuras de Accion</a></li>
         </ol>
     </div>
 </div>
@@ -18,17 +18,24 @@
                     href="#list-Tamashii" role="tab" aria-controls="Tamashii">Tamashii nations</a>
                 <a class="list-group-item list-group-item-action" id="list-Bandai-list" data-toggle="list"
                     href="#list-Bandai" role="tab" aria-controls="Bandai">Bandai</a>
+                <a class="list-group-item list-group-item-action" id="list-dc-list" data-toggle="list"
+                    href="#list-dc" role="tab" aria-controls="dc">DC Comics</a>
                 <a class="list-group-item list-group-item-action" id="list-Banpresto-list" data-toggle="list"
                     href="#list-Banpresto" role="tab" aria-controls="Banpresto">Banpresto</a>
+                <a class="list-group-item list-group-item-action" id="list-Diamond-list" data-toggle="list"
+                    href="#list-Diamond" role="tab" aria-controls="Diamond">Diamond select toys</a>
+                <a class="list-group-item list-group-item-action" id="list-Hasbro-list" data-toggle="list"
+                    href="#list-Hasbro" role="tab" aria-controls="Hasbro">Hasbro</a>
             </div>
         </div>
         <div class="col-9">
-        <!--  VISTA PRODUCTOS  -->
+            <!--  VISTA PRODUCTOS  -->
             <div class="card  ">
-                <h1 class="text">Anime Series</h1>
+                <h1 class="text">Figuras de Accion</h1>
             </div>
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active" id="list-todos" role="tabpanel" aria-labelledby="list-todos-list">
+                <div class="tab-pane fade show active" id="list-todos" role="tabpanel"
+                    aria-labelledby="list-todos-list">
                     <div class="row row-cols-1 row-cols-md-4">
                         <div class="col-3" *ngFor="let product of productos">
                             <app-producto-card [producto]="product"></app-producto-card>
@@ -38,32 +45,66 @@
                 <div class="tab-pane fade" id="list-Tamashii" role="tabpanel" aria-labelledby="list-Tamashii-list">
                     <div class="row row-cols-1 row-cols-md-4">
                         <ng-container *ngFor="let product of productos">
-                        <div class="col-3"  *ngIf="product.marca === tamashi">
-                            <app-producto-card  [producto]="product">
-                            </app-producto-card>
-                        </div>
-                    </ng-container>
+                            <div class="col-3" *ngIf="product.marca === tamashi">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-Bandai" role="tabpanel" aria-labelledby="list-Bandai-list">
                     <div class="row row-cols-1 row-cols-md-4">
                         <ng-container *ngFor="let product of productos">
-                        <div class="col-3" *ngIf="product.marca === bandai">
-                            <app-producto-card  [producto]="product">
-                            </app-producto-card>
-                        </div></ng-container>
+                            <div class="col-3" *ngIf="product.marca === bandai">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
                 <div class="tab-pane fade" id="list-Banpresto" role="tabpanel" aria-labelledby="list-Banpresto-list">
                     <div class="row row-cols-1 row-cols-md-4">
                         <ng-container *ngFor="let product of productos">
-                        <div class="col-3" *ngIf="product.marca === banpresto">
-                            <app-producto-card  [producto]="product">
-                            </app-producto-card>
-                        </div></ng-container>
+                            <div class="col-3" *ngIf="product.marca === banpresto">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-Diamond" role="tabpanel" aria-labelledby="list-Diamond-list">
+                    <div class="row row-cols-1 row-cols-md-4">
+                        <ng-container *ngFor="let product of productos">
+                            <div class="col-3" *ngIf="product.marca === diamon">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-Hasbro" role="tabpanel" aria-labelledby="list-Hasbro-list">
+                    <div class="row row-cols-1 row-cols-md-4">
+                        <ng-container *ngFor="let product of productos">
+                            <div class="col-3" *ngIf="product.marca === hasbro">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="list-dc" role="tabpanel" aria-labelledby="list-dc-list">
+                    <div class="row row-cols-1 row-cols-md-4">
+                        <ng-container *ngFor="let product of productos">
+                            <div class="col-3" *ngIf="product.marca === dc">
+                                <app-producto-card [producto]="product">
+                                </app-producto-card>
+                            </div>
+                        </ng-container>
                     </div>
                 </div>
             </div>
         </div>
-    </div><!--col 12-->
-</div><!--fluid-->
+    </div>
+    <!--col 12-->
+</div>
+<!--fluid-->

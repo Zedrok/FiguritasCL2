@@ -15,6 +15,9 @@ export class AnimeScreenComponent implements OnInit {
   public tamashi : string;
   public bandai : string;
   public banpresto : string;
+  public diamon : string;
+  public hasbro : string;
+  public dc : string;
 
   constructor(private productService: ProductService,) {
 
@@ -25,6 +28,9 @@ export class AnimeScreenComponent implements OnInit {
     this.tamashi = 'Tamashii nations';
     this.bandai = 'Bandai';
     this.banpresto = 'Banpresto';
+    this.diamon = 'Diamond select toys',
+    this.hasbro = 'Hasbro';
+    this.dc = 'DC Comics';
   }
 
 }
