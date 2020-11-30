@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'detalleFigurita/:id', component: DetalleFiguraScreenComponent },
   { path: 'Login', loadChildren: () => import('./modules/auth/login/login.module').then(m => m.LoginModule) },
   { path: 'Register', loadChildren: () => import('./modules/auth/register/register.module').then(m => m.RegisterModule) },
+  { path: 'backPassword', loadChildren: () => import('./modules/auth/back-password/back-password.module').then(m => m.BackPasswordModule) },
 ];
 
 @NgModule({
