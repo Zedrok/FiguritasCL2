@@ -27,4 +27,5 @@ export class CommentService {
   public getByType(tipo: string): Comment[] {
     return this.comentario;
   }
+
 }

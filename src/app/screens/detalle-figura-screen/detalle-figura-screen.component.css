@@ -52,7 +52,12 @@
         height: 100%;
         background: white;
     }
-  
+
+    #reseña{
+        background:rgb(241, 239, 239);
+        border-color: black;
+    }
+    
     li{
         text-decoration: none;
         list-style: none;
