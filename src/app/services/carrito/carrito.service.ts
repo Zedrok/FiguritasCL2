@@ -9,19 +9,18 @@ export class CarritoService {
 
   productos = PRODUCT;
   items: ProductoCarrito[] = [];
-  encontrado = false;
   constructor() {
   }
 
   agregarCarrito(producto): void{
     let encontrado = false;
     this.items.forEach((elemento) => {
-    if (elemento._id === producto._id){
+      if (elemento._id === producto._id){
         encontrado = true;
         elemento.cantidad += 1;
       }
     });
-    if (!this.encontrado) {
+    if (!encontrado) {
       this.items.push({ _id : producto._id, nombre : producto.nombre, precio : producto.precio, cantidad : 1});
     }
   }
