@@ -136,7 +136,7 @@
                             <table class="table table-hover align-middle">
                                 <tbody class="align-middle">
                                     <tr *ngFor="let item of items">
-                                        <td class="align-middle"><a [routerLink]="['../detalleFigurita',item._id]">{{ item.nombre }}
+                                        <td class="align-middle"><a [routerLink]="['../detalleFigurita',item._id]">
                                             <img src="{{item.imgUrl}}" style="width: 5em" class="card-img-top mb-1 ml-1 mr-1 my-2  pl-3 pr-3 " alt="..."></a></td>
                                         <td class="align-middle"><a [routerLink]="['../detalleFigurita',item._id]">{{ item.nombre }}</a></td>
                                         <td class="align-middle">{{ item.cantidad }}</td>
