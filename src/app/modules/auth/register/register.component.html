@@ -13,21 +13,12 @@
                 <div class="card-body">
                     <h1 class="text-center">Registrarse</h1><span>Por favor rellene los siguientes campos para poder crear una cuenta</span>
                     <form [formGroup]="registerForm" (ngSubmit)="onRegister()" class="mt-5">
-                        <div class="form-group">
-                            <label>Nombre</label>
-                            <input class="form-control" type="text" placeholder="Por favor ingrese su nombre en este campo" formControlName="nombre">
-                        </div>
-                        <div class="form-group">
-                            <label>Apellido</label>
-                            <input class="form-control" type="text" placeholder="Por favor ingrese su apellido en este campo"formControlName="apellido">
-                        </div>
-                        <div class="form-group">
-                            <label>Telefono De contacto</label>
-                            <input class="form-control" type="tel" placeholder="Por favor ingrese su telefono celular en este campo"formControlName="telefono">
-                        </div>
+                       
+                       
+                        
                         <div class="form-group">
                             <label>Correo</label>
-                            <input class="form-control" type="email" placeholder="Por favor ingrese  un  correo válido" formControlName="email">
+                            <input class="form-control" type="text" placeholder="Por favor ingrese  un  correo válido" formControlName="email">
                         </div>
                         <div class="form-group">
                             <label>Contraseña</label>
