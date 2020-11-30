@@ -7,7 +7,7 @@ import { ProductoCarrito } from '../../models/productoCarrito.model';
 })
 export class CarritoService {
   productos = PRODUCT;
-  orden;
+  orden = '';
   items: ProductoCarrito[] = [];
   constructor() {
   }

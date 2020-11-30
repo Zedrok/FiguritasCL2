@@ -56,16 +56,18 @@ export class CarroComprasComponent implements OnInit {
   }
 
   generarOrden(): string {
-    function generaNss(): string{
-      let result = '';
-      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-      const charactersLength = 8;
-      for (let i = 0; i < charactersLength; i++) {
-          result += characters.charAt(Math.floor(Math.random() * characters.length));
+    if (this.carrito.orden === ''){
+      function generaNss(): string{
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = 8;
+        for (let i = 0; i < charactersLength; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return result;
       }
-      return result;
+      this.carrito.orden = generaNss();
     }
-    this.carrito.orden = generaNss();
     return this.carrito.orden;
   }
 }
