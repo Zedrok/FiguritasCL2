@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PRODUCT } from '../product/PRODUCT.const';
 import { ProductoCarrito } from '../../models/productoCarrito.model';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +21,6 @@ export class CarritoService {
         elemento.cantidad += 1;
       }
     });
-
     if (!this.encontrado) {
       this.items.push({ _id : producto._id, nombre : producto.nombre, precio : producto.precio, cantidad : 1});
     }

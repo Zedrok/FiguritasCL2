@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup,FormControl,FormBuilder} from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
 import { CarritoService} from '../../services/carrito/carrito.service' ;
 
 @Component({
@@ -14,9 +14,11 @@ export class CarroComprasComponent implements OnInit {
   items = [];
   mensaje;
   public totalCarrito: number;
-  constructor(private carrito: CarritoService, private formulario: FormBuilder) { 
+  constructor(private carrito: CarritoService, private formulario: FormBuilder) {
     this.totalCarrito = 0;
     this.form = this.formulario.group({
+      controlNombre: '',
+      controlCorreo: '',
       controlDireccion: '',
       controlDireccion2: '',
       controlCiudad: '',
@@ -28,7 +30,7 @@ export class CarroComprasComponent implements OnInit {
   ngOnInit(): void {
     this.formgrouptest = new FormGroup({
       controlNombre: new FormControl(),
-      cotrolCorreo: new FormControl(),
+      controlCorreo: new FormControl(),
       controlDireccion: new FormControl(),
       controlDireccion2: new FormControl(),
       controlCiudad: new FormControl(),
@@ -41,6 +43,7 @@ export class CarroComprasComponent implements OnInit {
       this.totalCarrito += elemento.precio * elemento.cantidad;
     });
   }
+
   EliminarDelCarrito(id): void{
     // tslint:disable-next-line: prefer-const
     let index = this.items.findIndex(elemento => elemento._id === id);
