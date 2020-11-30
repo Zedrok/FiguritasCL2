@@ -6,8 +6,8 @@ import { ProductoCarrito } from '../../models/productoCarrito.model';
   providedIn: 'root'
 })
 export class CarritoService {
-
   productos = PRODUCT;
+  orden;
   items: ProductoCarrito[] = [];
   constructor() {
   }
@@ -21,7 +21,7 @@ export class CarritoService {
       }
     });
     if (!encontrado) {
-      this.items.push({ _id : producto._id, nombre : producto.nombre, precio : producto.precio, cantidad : 1});
+      this.items.push({ _id : producto._id, nombre : producto.nombre, precio : producto.precio, cantidad : 1, imgUrl: producto.imgUrl});
     }
   }
 
@@ -32,5 +32,9 @@ export class CarritoService {
 
   ListarCarrito(): any[]{
     return this.items;
+  }
+
+  guardarOrden(orden): void{
+    this.orden = orden;
   }
 }

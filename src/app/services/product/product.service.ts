@@ -10,7 +10,7 @@ export class ProductService {
 
   private productos: Product[];
   private productosType: Product[] ;
-  
+
 
   constructor() {
     this.productos = PRODUCT;
@@ -24,7 +24,7 @@ export class ProductService {
   public getByID(id: string): Product {
     return this.productos.find((producto: Product) => producto._id === id);
   }
-  
 
-  
+
+
 }

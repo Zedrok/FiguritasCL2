@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireModule} from '@angular/fire' ;
-import{AngularFireAuthModule} from '@angular/fire/auth' ;
+import {AngularFireAuthModule} from '@angular/fire/auth' ;
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,6 @@ import { AnimeScreenComponent } from './screens/anime-screen/anime-screen.compon
 import { ComicsScreenComponent } from './screens/comics-screen/comics-screen.component';
 import { ProductoCardComponent } from './components/producto-card/producto-card.component';
 import { DetalleFiguraScreenComponent } from './screens/detalle-figura-screen/detalle-figura-screen.component';
-import { ProductosCarritoComponent } from './components/productos-carrito/productos-carrito.component';
 import { ComentarioProductoComponent } from './components/comentario-producto/comentario-producto.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -36,7 +35,6 @@ import { environment } from '../environments/environment';
     ComicsScreenComponent,
     ProductoCardComponent,
     DetalleFiguraScreenComponent,
-    ProductosCarritoComponent,
     ComentarioProductoComponent,
   ],
   imports: [

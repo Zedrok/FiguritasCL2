@@ -7,6 +7,7 @@ import { CarritoService} from '../../services/carrito/carrito.service' ;
   templateUrl: './carro-compras.component.html',
   styleUrls: ['./carro-compras.component.css']
 })
+
 export class CarroComprasComponent implements OnInit {
   formgrouptest: FormGroup;
 
@@ -16,15 +17,6 @@ export class CarroComprasComponent implements OnInit {
   public totalCarrito: number;
   constructor(private carrito: CarritoService, private formulario: FormBuilder) {
     this.totalCarrito = 0;
-    this.form = this.formulario.group({
-      controlNombre: '',
-      controlCorreo: '',
-      controlDireccion: '',
-      controlDireccion2: '',
-      controlCiudad: '',
-      controlComuna: '',
-      controlZip: '',
-    });
   }
 
   ngOnInit(): void {
@@ -53,13 +45,31 @@ export class CarroComprasComponent implements OnInit {
   }
 
   onSubmit(): void{
-    window.alert( '\nNombre Completo: ' + this.formgrouptest.get('controlNombre').value
-                  + '\nCorreo: ' + this.formgrouptest.get('controlCorreo').value
-                  + '\nDireccion: ' + this.formgrouptest.get('controlDireccion').value
-                  + '\nDireccion2: ' + this.formgrouptest.get('controlDireccion2').value
-                  + '\nCiudad: ' + this.formgrouptest.get('controlCiudad').value
-                  + '\nComuna: ' + this.formgrouptest.get('controlComuna').value
-                  + '\nZip: ' + this.formgrouptest.get('controlZip').value);
   }
 
+  getNombre(): void{
+    return this.formgrouptest.get('controlNombre').value;
+  }
+
+  getCorreo(): void{
+    return this.formgrouptest.get('controlCorreo').value;
+  }
+
+  generarOrden(): string {
+    function generaNss(): string{
+      let result = '';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const charactersLength = 8;
+      for (let i = 0; i < charactersLength; i++) {
+          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return result;
+    }
+    return generaNss();
+  }
+
+  getOrden(): string {
+    this.carrito.orden = this.generarOrden();
+    return this.carrito.orden;
+  }
 }

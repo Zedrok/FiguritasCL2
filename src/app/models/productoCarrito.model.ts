@@ -3,4 +3,5 @@ export interface ProductoCarrito{
     nombre: string ;
     cantidad: number;
     precio: number ;
+    imgUrl: string;
 }
