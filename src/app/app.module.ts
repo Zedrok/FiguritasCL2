@@ -10,7 +10,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PantallaPrincipalScreenComponent } from './screens/pantalla-principal-screen/pantalla-principal-screen.component';
 import { CuentaScreenComponent } from './screens/cuenta-screen/cuenta-screen.component';
-import { CarroComprasScreenComponent } from './screens/carro-compras-screen/carro-compras-screen.component';
+
 import { DcScreenComponent } from './screens/dc-screen/dc-screen.component';
 import { MarvelScreenComponent } from './screens/marvel-screen/marvel-screen.component';
 import { AnimeScreenComponent } from './screens/anime-screen/anime-screen.component';
@@ -30,7 +30,6 @@ import { environment } from '../environments/environment';
     FooterComponent,
     PantallaPrincipalScreenComponent,
     CuentaScreenComponent,
-    CarroComprasScreenComponent,
     DcScreenComponent,
     MarvelScreenComponent,
     AnimeScreenComponent,

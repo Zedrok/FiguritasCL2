@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup,FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   })
 
-  constructor(private aft:AuthService) { }
+  constructor(private aft:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
     const{email,password}=this.loginForm.value ;
     this.aft.Login(email,password) ;
     window.alert("Logueado Exitosamente") ;
+    this.router.navigate(['/inicio']) ;
     
     console.log('Formularios',this.loginForm.value) ;
 

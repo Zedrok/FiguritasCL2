@@ -44,5 +44,8 @@ export class AuthService {
       await this.afAuth.sendPasswordResetEmail(email);
     }catch(error){console.log(error)} 
   }
+  getUser(){
+    return this.afAuth.authState.pipe()
+  }
   
 }

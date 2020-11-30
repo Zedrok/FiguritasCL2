@@ -7,7 +7,7 @@ import { DcScreenComponent } from './screens/dc-screen/dc-screen.component';
 import { DetalleFiguraScreenComponent } from './screens/detalle-figura-screen/detalle-figura-screen.component';
 import { MarvelScreenComponent } from './screens/marvel-screen/marvel-screen.component';
 import { PantallaPrincipalScreenComponent } from './screens/pantalla-principal-screen/pantalla-principal-screen.component';
-import { CarroComprasScreenComponent } from './screens/carro-compras-screen/carro-compras-screen.component';
+
 
 
 
@@ -19,13 +19,14 @@ const routes: Routes = [
   { path: 'dc', component: DcScreenComponent },
   { path: 'marvel', component: MarvelScreenComponent },
   { path: 'cuenta', component: CuentaScreenComponent },
-  { path: 'carrito', component: CarroComprasScreenComponent },
+ 
   { path: 'anime', component: AnimeScreenComponent },
   { path: 'comics', component: ComicsScreenComponent },
   { path: 'detalleFigurita/:id', component: DetalleFiguraScreenComponent },
   { path: 'Login', loadChildren: () => import('./modules/auth/login/login.module').then(m => m.LoginModule) },
   { path: 'Register', loadChildren: () => import('./modules/auth/register/register.module').then(m => m.RegisterModule) },
   { path: 'backPassword', loadChildren: () => import('./modules/auth/back-password/back-password.module').then(m => m.BackPasswordModule) },
+  { path: 'carrito', loadChildren: () => import('./modules/carro-compras/carro-compras.module').then(m => m.CarroComprasModule) },
 ];
 
 @NgModule({
