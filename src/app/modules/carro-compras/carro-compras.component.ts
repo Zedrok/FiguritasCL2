@@ -61,7 +61,7 @@ export class CarroComprasComponent implements OnInit {
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
       const charactersLength = 8;
       for (let i = 0; i < charactersLength; i++) {
-          result += characters.charAt(Math.floor(Math.random() * charactersLength));
+          result += characters.charAt(Math.floor(Math.random() * characters.length));
       }
       return result;
     }
