@@ -19,12 +19,13 @@ export class DetalleFiguraScreenComponent implements OnInit {
   public product: Product;
   public productos: Product[];
   public comentario: Comment[];
+  public promedio : number ;
 
   constructor(
     private productService: ProductService,
     private commentService: CommentService,
     private activatedRouted: ActivatedRoute,
-    private carrito: CarritoService,
+    private carrito: CarritoService, 
     ) {
    }
 
@@ -35,10 +36,26 @@ export class DetalleFiguraScreenComponent implements OnInit {
     this.product = this.productService.getByID(this.id) ;
     this.productos = this.productService.getAllProducts();
     this.comentario = this.commentService.getAllComment();
+    this.promedio = 0 ;
+    this.promedioValoracion();
   }
 
   agregarCarrito(producto): void{
     this.carrito.agregarCarrito(producto);
   }
+  
+  promedioValoracion (): void{
+    var i = 0;
+    var b = 0;
+    for (const comment of this.comentario){
+       if (this.idpo === comment._idProduct) {
+        i ++;
+        b = b + comment.puntuacion;  
+       }
+    } 
+    
+    this.promedio =Math.round(b/i) ;
+  }
+
 
 }

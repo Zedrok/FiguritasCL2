@@ -58,84 +58,51 @@
                 <!--Componente de reseña , detalles tecnicos del producto-->
                 <div class="row">
                     <div class="col-9">
-                        <h3>Valoracion del producto</h3>
+                        <h3>Valoracion del producto {{promedio}}</h3>
                         <div class="container">
+                           
+
                             <h3>
-                                <div [ngSwitch]="  ">
-                                    <!--media estrella-->
-                                    <div *ngSwitchCase="true">
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+                                <div [ngSwitch]="promedio">
+                                  
                                     <!--una estrella-->
-                                    <div *ngSwitchCase="true">
+                                    <div *ngSwitchCase="1">
                                         <i class="fas fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
-                                    <!--1 y media estrella-->
-                                    <div *ngSwitchCase="true">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+                                 
                                     <!--2 estrella-->
-                                    <div *ngSwitchCase="true">
+                                    <div *ngSwitchCase="2">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
-                                    <!--2 y media estrella-->
-                                    <div *ngSwitchCase="true">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+                                 
                                     <!--3 estrellas estrella-->
-                                    <div *ngSwitchCase="true">
+                                    <div *ngSwitchCase="3">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="far fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
-                                    <!--3 y media estrella-->
-                                    <div *ngSwitchCase="true">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
+                                  
                                     <!--4 estrella-->
-                                    <div *ngSwitchCase="true">
+                                    <div *ngSwitchCase="4">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="far fa-star"></i>
                                     </div>
-                                    <!--4 y media estrella-->
-                                    <div *ngSwitchCase="true">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
+                                   
                                     <!--5 estrella-->
-                                    <div *ngSwitchCase="true">
+                                    <div *ngSwitchCase="5">
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
                                         <i class="fas fa-star"></i>
