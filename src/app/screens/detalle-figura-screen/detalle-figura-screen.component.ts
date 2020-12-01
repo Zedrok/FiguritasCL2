@@ -20,6 +20,7 @@ export class DetalleFiguraScreenComponent implements OnInit {
   public productos: Product[];
   public comentario: Comment[];
   public promedio : number ;
+  public cantidadComentario: number;
 
   constructor(
     private productService: ProductService,
@@ -37,7 +38,9 @@ export class DetalleFiguraScreenComponent implements OnInit {
     this.productos = this.productService.getAllProducts();
     this.comentario = this.commentService.getAllComment();
     this.promedio = 0 ;
+    this.cantidadComentario = 0;
     this.promedioValoracion();
+    this.cantidadCo();
   }
 
   agregarCarrito(producto): void{
@@ -51,11 +54,22 @@ export class DetalleFiguraScreenComponent implements OnInit {
        if (this.idpo === comment._idProduct) {
         i ++;
         b = b + comment.puntuacion;  
-       }
-    } 
-    
+       } 
+    }  
     this.promedio =Math.round(b/i) ;
   }
+
+  cantidadCo(): void{
+    var i = 0;
+    for (const comment of this.comentario){
+      if (this.idpo === comment._idProduct) {
+       i++; 
+      }
+   }  
+   this.cantidadComentario = i ;
+  }
+
+
 
 
 }
