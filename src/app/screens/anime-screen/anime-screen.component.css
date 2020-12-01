@@ -2,23 +2,28 @@
 {
     padding-top: 5px;
 }
+@media (max-width: 2000px) {
+    .text
+    {
+        text-align: left;
+        top: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
 
-.text
-{
-    text-align: left;
-    top: 10px;
-    padding-left: 5px;
-    padding-right: 5px;
+    .col-3
+    {
+        text-align: center;
+        ;
+    }
+
+    .col-9
+    {
+        text-align: center;
+        
+    }
+
 }
-
-.col-3
-{
-    text-align: center;
-    ;
-}
-
-.col-9
-{
-    text-align: center;
+@media (max-width: 600px){
     
 }

@@ -17,19 +17,9 @@
   .btn {
     margin-left: 10px;
   }
-  .form-inline {
-    margin-left: 0px;
-    left: 30px;
-    margin-right: 0px;
-    padding-left: 100px;
-  }
-  .navbar ul {
-    margin-left: 20px;
-    padding-left: 120px;
-  }
+  
   .navbar ul li {
-    margin-right: 50px;
-    margin-left: 50px;
+      margin-left:200px ;
   }
   .navbar ul li a:hover {
     color: #fff0f5;
@@ -63,9 +53,6 @@
   .btn {
     margin-left: 10px;
   }
-  .form-inline {
-    padding-left: 120px;
-  }
   .nav-item {
     padding-left: 70px;
   }
@@ -98,16 +85,13 @@
   .btn {
     position: relative;
   }
-  .form-inline {
-    padding-left: 0;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
+
   .nav-item {
     margin-left: 0;
     padding-left: 0px;
   }
   .navbar ul li {
+    text-align: center;
     margin-left: 0px;
   }
   .nav-link {

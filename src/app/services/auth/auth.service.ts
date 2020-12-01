@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import {AngularFireAuth} from '@angular/fire/auth';
+import { first } from 'rxjs/operators';
 import * as firebase from 'firebase';
 
 
@@ -45,7 +46,7 @@ export class AuthService {
     }catch(error){console.log(error)} 
   }
   getUser(){
-    return this.afAuth.authState.pipe()
+    return this.afAuth.authState.pipe(first()).toPromise ;
   }
   
 }

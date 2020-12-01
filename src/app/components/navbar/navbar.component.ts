@@ -8,15 +8,17 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  public isLogged = true ;
+  public isLogged = false ;
   constructor(private atf: AuthService, private router: Router) { }
 
   // tslint:disable-next-line: typedef
-  async ngOnInit()
+  ngOnInit()
   {
-    const user: any = await this.atf.getUser() ;
-    if (user){
-      this.isLogged = true ;
+    const user =  this.atf.getUser() ;
+    if (user!=null){
+      console.log(user) ;
+    
+      console.log('Esta logueado ',this.isLogged.valueOf());
     }
   }
   alertaMantenimiento(): void{
@@ -25,7 +27,10 @@ export class NavbarComponent implements OnInit {
   // tslint:disable-next-line: typedef
   logOut(){
     // tslint:disable-next-line: no-unused-expression
-    this.atf.logout ;
+    this.isLogged = false ;
+    this.router.navigate(['/inicio']) ;
+    return this.atf.logout ;
+    
   }
 
 }
