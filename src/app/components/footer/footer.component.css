@@ -1,10 +1,27 @@
 footer {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  bottom: 0;
+  left:0;
   background-color: #e6df44;
   color: #000;
-  padding: 10px;
-  position: relative;
   margin-bottom: 0;
 }
+
+
+
+#containerFooter, #containerFooter2
+{
+  position:relative;
+  margin-top:2em;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+}
+
 footer .pie {
   display: flex;
   width: 100%;
